@@ -11,7 +11,8 @@ import tempfile
 import textwrap
 import urllib.parse
 import urllib.request
-from typing import List
+from typing import Any
+from typing import Dict
 from typing import NamedTuple
 from typing import Optional
 from typing import Set
@@ -222,8 +223,26 @@ REPOS = (
 # END
 
 
-def _cfg_str(filenames: List[str]) -> str:
-    return '\n' + '\n'.join(filenames)
+def _ts_to_js(scope: str, dct: Dict[str, Any]) -> Dict[str, Any]:
+    ret = {}
+
+    for k, v in dct.items():
+        if k == 'name' and v == 'TypeScriptReact':
+            v = 'JavaScriptReact'
+        elif k == 'fileTypes':
+            v = ['.js', '.jsx', '.es6', '.mjs', '.cjs']
+        elif k == 'scopeName':
+            v = f'scope{scope}'
+        elif isinstance(v, list):
+            v = [_ts_to_js(scope, d) for d in v if isinstance(d, dict)]
+        elif isinstance(v, dict):
+            v = _ts_to_js(scope, v)
+        elif k in {'name', 'contentName'} and isinstance(v, str):
+            v = v.replace('.tsx', scope)
+
+        ret[k] = v
+
+    return ret
 
 
 def _download(*, only: Optional[str]) -> int:
@@ -279,6 +298,18 @@ def _download(*, only: Optional[str]) -> int:
                 json.dump(loaded, f)
                 f.write('\n')
 
+    # similar to what vs code does, derive javascript from typescript
+    if only is None or only == 'microsoft/TypeScript-TmLanguage':
+        with open(os.path.join(_GRAMMAR_DIR, 'source.tsx.json')) as f:
+            tsx = json.load(f)
+
+        for scope in ('.js', '.js.jsx'):
+            grammar_name = f'source{scope}.json'
+            grammars.add(grammar_name)
+            with open(os.path.join(_GRAMMAR_DIR, grammar_name), 'w') as f:
+                json.dump(_ts_to_js(scope, tsx), f)
+                f.write('\n')
+
     if only is None:
         existing_licenses = set(os.listdir(_LICENSE_DIR))
         for victim in existing_licenses - licenses:
@@ -294,9 +325,9 @@ def _download(*, only: Optional[str]) -> int:
     cfg.read('setup.cfg')
 
     license_files = sorted(os.path.join(_LICENSE_DIR, f) for f in licenses)
-    cfg['metadata']['license_files'] = _cfg_str(license_files)
+    cfg['metadata']['license_files'] = '\n' + '\n'.join(license_files)
     grammar_files = sorted(os.path.join(_GRAMMAR_DIR, f) for f in grammars)
-    cfg['options.data_files'][_GRAMMAR_DIR] = _cfg_str(grammar_files)
+    cfg['options.data_files'][_GRAMMAR_DIR] = '\n' + '\n'.join(grammar_files)
 
     sio = io.StringIO()
     cfg.write(sio)
