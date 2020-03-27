@@ -43,15 +43,16 @@ class Repo(NamedTuple):
         return f'https://raw.github.com/{self.name}/{self.version}/{path}'
 
     def __repr__(self) -> str:
+        grammars = tuple(sorted(self.grammars))
         max_width = 80 - len('        grammars=') - len(',')
         if len(repr(self.grammars)) > max_width:
             grammars_repr = (
                 '(\n' +
-                ''.join(f'        {g!r},\n' for g in self.grammars) +
+                ''.join(f'        {g!r},\n' for g in grammars) +
                 '    )'
             )
         else:
-            grammars_repr = repr(self.grammars)
+            grammars_repr = repr(grammars)
 
         if self.todo:
             todo_repr = f'    todo={self.todo!r},\n'
@@ -107,12 +108,22 @@ REPOS = (
         grammars=('grammars/css.cson',),
     ),
     Repo(
+        name='atom/language-sass',
+        version='f52ab12',
+        license_path='LICENSE.md',
+        grammars=(
+            'grammars/sass.cson',
+            'grammars/sassdoc.cson',
+            'grammars/scss.cson',
+        ),
+    ),
+    Repo(
         name='atom/language-shellscript',
         version='7008ea92',
         license_path='LICENSE.md',
         grammars=(
-            'grammars/shell-unix-bash.cson',
             'grammars/shell-session.cson',
+            'grammars/shell-unix-bash.cson',
         ),
     ),
     Repo(

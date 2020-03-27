@@ -1,8 +1,7 @@
 *.egg-info
 *.pyc
 /.coverage
-/.coverage.*
 /.mypy_cache
-/.pytest_cache
 /.tox
+/dist
 /venv*
