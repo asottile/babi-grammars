@@ -122,6 +122,12 @@ REPOS = (
         grammars=('Syntaxes/Makefile.plist',),
     ),
     Repo(
+        name='jeff-hykin/better-go-syntax',
+        version='302b427',
+        license_path='LICENSE',
+        grammars=('source/generated.tmLanguage.json',),
+    ),
+    Repo(
         name='jeff-hykin/cpp-textmate-grammar',
         version='579ebc2',
         license_path='LICENSE',
@@ -203,7 +209,7 @@ def _cfg_str(filenames: List[str]) -> str:
     return '\n' + '\n'.join(filenames)
 
 
-def _download() -> int:
+def _download(*, only: Optional[str]) -> int:
     assert os.path.exists(_GRAMMAR_DIR)
     assert os.path.exists(_LICENSE_DIR)
 
@@ -211,6 +217,8 @@ def _download() -> int:
     grammars: Set[str] = set()
 
     for repo in REPOS:
+        if only is not None and repo.name != only:
+            continue
         print(f'{repo.name}...')
 
         licenses.add(repo.license_filename)
@@ -254,12 +262,16 @@ def _download() -> int:
                 json.dump(loaded, f)
                 f.write('\n')
 
-    existing_licenses = set(os.listdir(_LICENSE_DIR))
-    for victim in existing_licenses - licenses:
-        os.remove(os.path.join(_LICENSE_DIR, victim))
-    existing_grammars = set(os.listdir(_GRAMMAR_DIR))
-    for victim in existing_grammars - grammars:
-        os.remove(os.path.join(_GRAMMAR_DIR, victim))
+    if only is None:
+        existing_licenses = set(os.listdir(_LICENSE_DIR))
+        for victim in existing_licenses - licenses:
+            os.remove(os.path.join(_LICENSE_DIR, victim))
+        existing_grammars = set(os.listdir(_GRAMMAR_DIR))
+        for victim in existing_grammars - grammars:
+            os.remove(os.path.join(_GRAMMAR_DIR, victim))
+    else:
+        licenses = set(os.listdir(_LICENSE_DIR))
+        grammars = set(os.listdir(_GRAMMAR_DIR))
 
     cfg = configparser.ConfigParser()
     cfg.read('setup.cfg')
@@ -281,9 +293,13 @@ def _download() -> int:
     return 0
 
 
-def _update() -> int:
+def _update(*, only: Optional[str]) -> int:
     new = []
     for repo in REPOS:
+        if only is not None and repo.name != only:
+            new.append(repo)
+            continue
+
         print(f'{repo.name} ... ', end='', flush=True)
 
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -352,12 +368,13 @@ def _update() -> int:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument('command', choices=('download', 'update'))
+    parser.add_argument('--only')
     args = parser.parse_args()
 
     if args.command == 'download':
-        return _download()
+        return _download(only=args.only)
     elif args.command == 'update':
-        return _update()
+        return _update(only=args.only)
     else:
         raise NotImplementedError(args.command)
 
