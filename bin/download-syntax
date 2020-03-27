@@ -157,6 +157,12 @@ REPOS = (
         grammars=('syntaxes/puppet.tmLanguage',),
     ),
     Repo(
+        name='microsoft/TypeScript-TmLanguage',
+        version='863fe48',
+        license_path='LICENSE.txt',
+        grammars=('TypeScript.tmLanguage', 'TypeScriptReact.tmLanguage'),
+    ),
+    Repo(
         name='microsoft/vscode-JSON.tmLanguage',
         version='d113e909',
         license_path='LICENSE',
