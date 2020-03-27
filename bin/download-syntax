@@ -166,6 +166,15 @@ REPOS = (
         grammars=('Syntaxes/Diff.plist',),
     ),
     Repo(
+        name='textmate/git.tmbundle',
+        version='5870cf3',
+        license_path='MIT-LICENSE',
+        grammars=(
+            'Syntaxes/Git Commit Message.tmLanguage',
+            'Syntaxes/Git Rebase Message.tmLanguage',
+        ),
+    ),
+    Repo(
         name='textmate/html.tmbundle',
         version='0c3d5ee5',
         license_path='README.mdown#License',
@@ -303,7 +312,10 @@ def _update() -> int:
             ancestor_cmd = (
                 *git, 'merge-base', '--is-ancestor', version, repo.version,
             )
-            if version != repo.version and subprocess.call(ancestor_cmd):
+            if (
+                    repo.version == 'HEAD' or
+                    version != repo.version and subprocess.call(ancestor_cmd)
+            ):
                 print(f'{repo.version} => {version}')
                 new.append(repo._replace(version=version))
             else:
