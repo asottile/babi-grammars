@@ -230,7 +230,7 @@ def _ts_to_js(scope: str, dct: Dict[str, Any]) -> Dict[str, Any]:
         if k == 'name' and v == 'TypeScriptReact':
             v = 'JavaScriptReact'
         elif k == 'fileTypes':
-            v = ['.js', '.jsx', '.es6', '.mjs', '.cjs']
+            v = ['js', 'jsx', 'es6', 'mjs', 'cjs']
         elif k == 'scopeName':
             v = f'scope{scope}'
         elif isinstance(v, list):
