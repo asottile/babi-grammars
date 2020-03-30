@@ -159,7 +159,7 @@ REPOS = (
     ),
     Repo(
         name='microsoft/TypeScript-TmLanguage',
-        version='863fe48',
+        version='dd81cfb',
         license_path='LICENSE.txt',
         grammars=('TypeScript.tmLanguage', 'TypeScriptReact.tmLanguage'),
     ),
