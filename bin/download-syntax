@@ -75,7 +75,7 @@ class Repo(NamedTuple):
 REPOS = (
     Repo(
         name='MagicStack/MagicPython',
-        version='c9b3409d',
+        version='0b09c1f',
         license_path='LICENSE',
         grammars=(
             'grammars/MagicPython.tmLanguage',
@@ -166,7 +166,7 @@ REPOS = (
     ),
     Repo(
         name='microsoft/TypeScript-TmLanguage',
-        version='dd81cfb',
+        version='84422d9',
         license_path='LICENSE.txt',
         grammars=('TypeScript.tmLanguage', 'TypeScriptReact.tmLanguage'),
     ),
