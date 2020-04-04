@@ -96,19 +96,6 @@ REPOS = (
         todo='https://github.com/zargony/atom-language-rust/pull/149',
     ),
     Repo(
-        name='asottile/cpp-textmate-grammar',
-        version='030f5d5',
-        license_path='LICENSE',
-        grammars=(
-            'syntaxes/c.tmLanguage.json',
-            'syntaxes/cpp.embedded.macro.tmLanguage.json',
-            'syntaxes/cpp.tmLanguage.json',
-            'syntaxes/objc.tmLanguage.json',
-            'syntaxes/objcpp.tmLanguage.json',
-        ),
-        todo='https://github.com/jeff-hykin/cpp-textmate-grammar/pull/465',
-    ),
-    Repo(
         name='asottile/language-xml',
         version='2d76bc1f',
         license_path='LICENSE.md',
@@ -165,6 +152,18 @@ REPOS = (
         version='302b427',
         license_path='LICENSE',
         grammars=('source/generated.tmLanguage.json',),
+    ),
+    Repo(
+        name='jeff-hykin/cpp-textmate-grammar',
+        version='8738024',
+        license_path='LICENSE',
+        grammars=(
+            'syntaxes/c.tmLanguage.json',
+            'syntaxes/cpp.embedded.macro.tmLanguage.json',
+            'syntaxes/cpp.tmLanguage.json',
+            'syntaxes/objc.tmLanguage.json',
+            'syntaxes/objcpp.tmLanguage.json',
+        ),
     ),
     Repo(
         name='lingua-pupuli/puppet-editor-syntax',
