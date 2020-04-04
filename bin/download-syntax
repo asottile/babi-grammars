@@ -103,6 +103,13 @@ REPOS = (
         todo='https://github.com/atom/language-xml/pull/99',
     ),
     Repo(
+        name='asottile/vscode-mssql',
+        version='5f5f452b',
+        license_path='LICENSE.txt',
+        grammars=('syntaxes/SQL.plist',),
+        todo='https://github.com/microsoft/vscode-mssql/pull/1660',
+    ),
+    Repo(
         name='atom/language-css',
         version='9feb69c0',
         license_path='LICENSE.md',
