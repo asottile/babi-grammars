@@ -214,6 +214,16 @@ REPOS = (
         grammars=('Syntaxes/Ini.plist',),
     ),
     Repo(
+        name='textmate/ruby.tmbundle',
+        version='8d525dd',
+        license_path='README.mdown#License',
+        grammars=(
+            'Syntaxes/Gemfile.tmLanguage',
+            'Syntaxes/HTML (Ruby - ERB).tmLanguage',
+            'Syntaxes/Ruby.plist',
+        ),
+    ),
+    Repo(
         name='textmate/yaml.tmbundle',
         version='e54ceae3',
         license_path='README.mdown#License',
