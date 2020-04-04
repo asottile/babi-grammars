@@ -89,6 +89,17 @@ REPOS = (
         grammars=('PowerShellSyntax.tmLanguage',),
     ),
     Repo(
+        name='Varriount/NimLime',
+        version='f75325a',
+        license_path='LICENSE',
+        grammars=(
+            'Syntaxes/Nim.tmLanguage',
+            'Syntaxes/Nim_Cfg.tmLanguage',
+            'Syntaxes/Nim_Comments.tmLanguage',
+            'Syntaxes/Nim_Filter.tmLanguage',
+        ),
+    ),
+    Repo(
         name='asottile/atom-language-rust',
         version='e113ca67',
         license_path='LICENSE.md',
