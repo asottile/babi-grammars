@@ -1,0 +1,94 @@
+#!/usr/bin/env python3
+import os.path
+from typing import AbstractSet
+
+from babi.highlight import Grammars
+from babi.highlight import highlight_line
+
+ROOT = os.path.realpath(os.path.join(os.path.dirname(__file__), '..'))
+
+TODO_TEST = frozenset((
+    # TODO: the embedded one shouldn't hit first
+    'source.cpp',
+    # TODO: I didn't have time to make demos for all of these
+    'source.css',
+    'source.css.scss',
+    'source.dockerfile',
+    'source.go',
+    'source.ini',
+    'source.js',
+    'source.js.jsx',
+    'source.json',
+    'source.makefile',
+    'source.nimble',
+    'source.objc',
+    'source.objcpp',
+    'source.powershell',
+    'source.puppet',
+    'source.python',
+    'source.regexp.python',
+    'source.ruby',
+    'source.ruby.gemfile',
+    'source.sass',
+    'source.sassdoc',
+    'source.shell',
+    'source.sql',
+    'source.ts',
+    'source.tsx',
+    'source.yaml',
+    'text.git-commit',
+    'text.git-rebase',
+    'text.html.basic',
+    'text.html.derivative',
+    'text.html.erb',
+    'text.shell-session',
+    'text.xml.xsl',
+))
+
+
+def pretty_scopes(scopes: AbstractSet[str]) -> str:
+    return '\n'.join(sorted(f'\t{scope}' for scope in scopes))
+
+
+def main() -> int:
+    grammar_dir = os.path.join(ROOT, 'share/babi/grammar_v1')
+    all_scopes = {filename[:-5] for filename in os.listdir(grammar_dir)}
+
+    grammars = Grammars(grammar_dir)
+
+    sample_dir = os.path.join(ROOT, 'testdata')
+    for filename in sorted(os.listdir(sample_dir)):
+        print(f'{filename}...')
+        filename = os.path.join(sample_dir, filename)
+
+        with open(filename) as f:
+            line = next(f, '')
+            compiler = grammars.compiler_for_file(filename, line)
+            state = compiler.root_state
+            state, regions = highlight_line(
+                compiler, state, line, first_line=True,
+            )
+            for region in regions:
+                all_scopes.difference_update(region.scope)
+
+            for line in f:
+                state, regions = highlight_line(
+                    compiler, state, line, first_line=False,
+                )
+                for region in regions:
+                    all_scopes.difference_update(region.scope)
+
+    if TODO_TEST - all_scopes:
+        joined = pretty_scopes(TODO_TEST - all_scopes)
+        raise AssertionError(f'now tested! remove from list:\n\n{joined}')
+
+    all_scopes.difference_update(TODO_TEST)
+    if all_scopes:
+        joined = pretty_scopes(all_scopes)
+        raise AssertionError(f'not all scopes are tested!\n\n{joined}')
+
+    return 0
+
+
+if __name__ == '__main__':
+    exit(main())

@@ -1,0 +1,58 @@
+commit a36ea5d1edeca1c96eff2c5d304b9a4a903a8700
+Author: Anthony Sottile <asottile@umich.edu>
+Date:   Wed Jan 8 22:20:01 2020 -0800
+
+    Set position at end when defaulting prompt
+
+# hello world
+diff --git a/babi.py b/babi.py
+index 3692765..07ab3bb 100644
+--- a/babi.py
++++ b/babi.py
+@@ -284,7 +284,7 @@ class Prompt:
+         self._prompt = prompt
+         self._lst = lst
+         self._y = len(lst) - 1
+-        self._x = 0
++        self._x = len(self._s)
+ 
+     @property
+     def _s(self) -> str:
+diff --git a/tests/save_test.py b/tests/save_test.py
+index 7ef8741..0c79e37 100644
+--- a/tests/save_test.py
++++ b/tests/save_test.py
+@@ -107,7 +107,7 @@ def test_save_via_ctrl_o(run, tmpdir):
+     with run(str(f)) as h, and_exit(h):
+         h.press('hello world')
+         h.press('^O')
+-        h.await_text(f'enter filename: {f}')
++        h.await_text(f'enter filename: ')
+         h.press('Enter')
+         h.await_text('saved! (1 line written)')
+     assert f.read() == 'hello world\n'
+@@ -125,7 +125,7 @@ def test_save_via_ctrl_o_set_filename(run, tmpdir):
+ 
+ 
+ @pytest.mark.parametrize('key', ('^C', 'Enter'))
+-def test_save_via_ctrl_o_cancelled(run, tmpdir, key):
++def test_save_via_ctrl_o_cancelled(run, key):
+     with run() as h, and_exit(h):
+         h.press('hello world')
+         h.press('^O')
+@@ -134,6 +134,15 @@ def test_save_via_ctrl_o_cancelled(run, tmpdir, key):
+         h.await_text('cancelled')
+ 
+ 
++def test_save_via_ctrl_o_position(run):
++    with run('filename') as h, and_exit(h):
++        h.press('hello world')
++        h.press('^O')
++        h.await_text('enter filename: filename')
++        h.await_cursor_position(x=24, y=23)
++        h.press('^C')
++
++
+ def test_save_on_exit_cancel_yn(run):
+     with run() as h, and_exit(h):
+         h.press('hello')
