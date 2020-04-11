@@ -243,6 +243,12 @@ REPOS = (
         license_path='README.mdown#License',
         grammars=('Syntaxes/YAML.tmLanguage',),
     ),
+    Repo(
+        name='vscode-restructuredtext/vscode-restructuredtext',
+        version='2cf5174',
+        license_path='LICENSE.txt',
+        grammars=('syntaxes/restructuredtext.tmLanguage',),
+    ),
 )
 # END
 
