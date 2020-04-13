@@ -5,7 +5,7 @@ from typing import AbstractSet
 from babi.highlight import Grammars
 from babi.highlight import highlight_line
 
-ROOT = os.path.realpath(os.path.join(os.path.dirname(__file__), '..'))
+ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), '..'))
 
 TODO_TEST = frozenset((
     # TODO: the embedded one shouldn't hit first
@@ -63,19 +63,17 @@ def main() -> int:
         with open(filename) as f:
             line = next(f, '')
             compiler = grammars.compiler_for_file(filename, line)
+            root_scope = compiler.root_state.entries[0].scope[0]
+            if root_scope == 'source.unknown':
+                raise SystemExit(f'unknown source language: {filename}')
+            all_scopes.discard(root_scope)
             state = compiler.root_state
-            state, regions = highlight_line(
-                compiler, state, line, first_line=True,
-            )
-            for region in regions:
-                all_scopes.difference_update(region.scope)
+            state, _ = highlight_line(compiler, state, line, first_line=True)
 
             for line in f:
-                state, regions = highlight_line(
+                state, _ = highlight_line(
                     compiler, state, line, first_line=False,
                 )
-                for region in regions:
-                    all_scopes.difference_update(region.scope)
 
     if TODO_TEST - all_scopes:
         joined = pretty_scopes(TODO_TEST - all_scopes)

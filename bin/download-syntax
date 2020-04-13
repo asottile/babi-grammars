@@ -237,6 +237,12 @@ REPOS = (
         ),
     ),
     Repo(
+        name='textmate/toml.tmbundle',
+        version='a8f4455',
+        license_path='README.mdown#License',
+        grammars=('Syntaxes/TOML.tmLanguage',),
+    ),
+    Repo(
         name='textmate/yaml.tmbundle',
         version='e54ceae3',
         license_path='README.mdown#License',
