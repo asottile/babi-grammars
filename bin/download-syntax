@@ -103,13 +103,6 @@ REPOS = (
         todo='https://github.com/atom/language-xml/pull/99',
     ),
     Repo(
-        name='asottile/vscode-mssql',
-        version='5f5f452b',
-        license_path='LICENSE.txt',
-        grammars=('syntaxes/SQL.plist',),
-        todo='https://github.com/microsoft/vscode-mssql/pull/1660',
-    ),
-    Repo(
         name='asottile/vscode-nim',
         version='c9051a8',
         license_path='LICENSE',
@@ -155,7 +148,7 @@ REPOS = (
     ),
     Repo(
         name='jeff-hykin/cpp-textmate-grammar',
-        version='8738024',
+        version='08c4c87',
         license_path='LICENSE',
         grammars=(
             'syntaxes/c.tmLanguage.json',
@@ -188,6 +181,12 @@ REPOS = (
         version='59a5962',
         license_path='LICENSE.txt',
         grammars=('syntaxes/markdown.tmLanguage',),
+    ),
+    Repo(
+        name='microsoft/vscode-mssql',
+        version='37a2272',
+        license_path='LICENSE.txt',
+        grammars=('syntaxes/SQL.plist',),
     ),
     Repo(
         name='moby/moby',

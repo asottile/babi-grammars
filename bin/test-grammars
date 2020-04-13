@@ -32,7 +32,6 @@ TODO_TEST = frozenset((
     'source.sass',
     'source.sassdoc',
     'source.shell',
-    'source.sql',
     'source.ts',
     'source.tsx',
     'source.yaml',
