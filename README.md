@@ -19,7 +19,9 @@ directory.  the license for this repository is available in the `LICENSE` file
 
 to add a grammar:
 - add it to the `REPOS` list in `./bin/download-syntax`
-- run `./bin/download-syntax download`
+    - if you want the latest, use `version='HEAD'` and then run
+      `./bin/download-syntax update --only repo/name` to freeze it
+- run `./bin/download-syntax download --only repo/name`
 
 to update all the grammars
 - run `./bin/download-syntax update`
