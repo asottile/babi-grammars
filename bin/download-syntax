@@ -75,7 +75,7 @@ class Repo(NamedTuple):
 REPOS = (
     Repo(
         name='MagicStack/MagicPython',
-        version='0b09c1f',
+        version='b4b2e6e',
         license_path='LICENSE',
         grammars=(
             'grammars/MagicPython.tmLanguage',
@@ -111,7 +111,7 @@ REPOS = (
     ),
     Repo(
         name='atom/language-css',
-        version='9feb69c0',
+        version='28f15d9',
         license_path='LICENSE.md',
         grammars=('grammars/css.cson',),
     ),
@@ -148,7 +148,7 @@ REPOS = (
     ),
     Repo(
         name='jeff-hykin/cpp-textmate-grammar',
-        version='08c4c87',
+        version='a823753',
         license_path='LICENSE',
         grammars=(
             'syntaxes/c.tmLanguage.json',
@@ -160,13 +160,13 @@ REPOS = (
     ),
     Repo(
         name='lingua-pupuli/puppet-editor-syntax',
-        version='498bb86',
+        version='7aa419a',
         license_path='LICENSE',
         grammars=('syntaxes/puppet.tmLanguage',),
     ),
     Repo(
         name='microsoft/TypeScript-TmLanguage',
-        version='84422d9',
+        version='fa4e0d3',
         license_path='LICENSE.txt',
         grammars=('TypeScript.tmLanguage', 'TypeScriptReact.tmLanguage'),
     ),
@@ -184,7 +184,7 @@ REPOS = (
     ),
     Repo(
         name='microsoft/vscode-mssql',
-        version='37a2272',
+        version='bd94bff',
         license_path='LICENSE.txt',
         grammars=('syntaxes/SQL.plist',),
     ),

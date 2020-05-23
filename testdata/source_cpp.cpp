@@ -16,6 +16,10 @@ using std::ifstream;
         static const bool isPoint = true;\
                 }
 
+#ifndef FOO
+#define BAR
+#endif
+
 
 int main(int argc, char* argv[]) {
     if (argc != 2) {
