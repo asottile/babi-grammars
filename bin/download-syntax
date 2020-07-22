@@ -110,6 +110,13 @@ REPOS = (
         todo='https://github.com/pragmagic/vscode-nim/pull/155',
     ),
     Repo(
+        name='asottile/yaml.tmbundle',
+        version='b81b4184',
+        license_path='README.mdown#License',
+        grammars=('Syntaxes/YAML.tmLanguage',),
+        todo='https://github.com/textmate/yaml.tmbundle/pull/35',
+    ),
+    Repo(
         name='atom/language-css',
         version='28f15d9',
         license_path='LICENSE.md',
@@ -241,12 +248,6 @@ REPOS = (
         version='a8f4455',
         license_path='README.mdown#License',
         grammars=('Syntaxes/TOML.tmLanguage',),
-    ),
-    Repo(
-        name='textmate/yaml.tmbundle',
-        version='e54ceae3',
-        license_path='README.mdown#License',
-        grammars=('Syntaxes/YAML.tmLanguage',),
     ),
     Repo(
         name='vscode-restructuredtext/vscode-restructuredtext',
