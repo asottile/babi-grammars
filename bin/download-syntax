@@ -143,7 +143,7 @@ REPOS = (
     ),
     Repo(
         name='fadeevab/make.tmbundle',
-        version='fd57c0552',
+        version='e36e02b',
         license_path='LICENSE.md',
         grammars=('Syntaxes/Makefile.plist',),
     ),
@@ -155,7 +155,7 @@ REPOS = (
     ),
     Repo(
         name='jeff-hykin/cpp-textmate-grammar',
-        version='a823753',
+        version='16c5ba3',
         license_path='LICENSE',
         grammars=(
             'syntaxes/c.tmLanguage.json',
@@ -167,7 +167,7 @@ REPOS = (
     ),
     Repo(
         name='lingua-pupuli/puppet-editor-syntax',
-        version='7aa419a',
+        version='57695b7',
         license_path='LICENSE',
         grammars=('syntaxes/puppet.tmLanguage',),
     ),
@@ -185,13 +185,13 @@ REPOS = (
     ),
     Repo(
         name='microsoft/vscode-markdown-tm-grammar',
-        version='59a5962',
+        version='4be9cb3',
         license_path='LICENSE.txt',
         grammars=('syntaxes/markdown.tmLanguage',),
     ),
     Repo(
         name='microsoft/vscode-mssql',
-        version='bd94bff',
+        version='750d30d',
         license_path='LICENSE.txt',
         grammars=('syntaxes/SQL.plist',),
     ),
@@ -245,7 +245,7 @@ REPOS = (
     ),
     Repo(
         name='textmate/toml.tmbundle',
-        version='a8f4455',
+        version='e82b64c',
         license_path='README.mdown#License',
         grammars=('Syntaxes/TOML.tmLanguage',),
     ),
