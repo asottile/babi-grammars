@@ -34,7 +34,6 @@ TODO_TEST = frozenset((
     'source.shell',
     'source.ts',
     'source.tsx',
-    'source.yaml',
     'text.git-commit',
     'text.git-rebase',
     'text.html.basic',

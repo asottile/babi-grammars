@@ -1,0 +1,6 @@
+hello: world
+this is a: |
+    multiline
+    string
+this is a number: 1.5
+this is not a number: 3.8.3
