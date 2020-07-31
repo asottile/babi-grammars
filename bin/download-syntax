@@ -148,6 +148,12 @@ REPOS = (
         grammars=('Syntaxes/Makefile.plist',),
     ),
     Repo(
+        name='hashicorp/vscode-terraform',
+        version='4df64eb',
+        license_path='LICENSE',
+        grammars=('syntaxes/terraform.tmGrammar.json',),
+    ),
+    Repo(
         name='jeff-hykin/better-go-syntax',
         version='302b427',
         license_path='LICENSE',
