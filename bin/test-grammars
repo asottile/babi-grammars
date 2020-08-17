@@ -57,7 +57,7 @@ def main() -> int:
         print(f'{filename}...')
         filename = os.path.join(sample_dir, filename)
 
-        with open(filename) as f:
+        with open(filename, encoding='utf-8') as f:
             line = next(f, '')
             compiler = grammars.compiler_for_file(filename, line)
             root_scope = compiler.root_state.entries[0].scope[0]
