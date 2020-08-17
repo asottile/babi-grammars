@@ -103,13 +103,6 @@ REPOS = (
         todo='https://github.com/atom/language-xml/pull/99',
     ),
     Repo(
-        name='asottile/vscode-nim',
-        version='c9051a8',
-        license_path='LICENSE',
-        grammars=('syntaxes/nim.json', 'syntaxes/nimble.json'),
-        todo='https://github.com/pragmagic/vscode-nim/pull/155',
-    ),
-    Repo(
         name='asottile/vscode-terraform',
         version='ed3e9bd',
         license_path='LICENSE',
@@ -209,6 +202,12 @@ REPOS = (
         grammars=(
             'contrib/syntax/textmate/Docker.tmbundle/Syntaxes/Dockerfile.tmLanguage',  # noqa: E501
         ),
+    ),
+    Repo(
+        name='pragmagic/vscode-nim',
+        version='a945e66',
+        license_path='LICENSE',
+        grammars=('syntaxes/nim.json', 'syntaxes/nimble.json'),
     ),
     Repo(
         name='textmate/diff.tmbundle',
