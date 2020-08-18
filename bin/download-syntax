@@ -103,13 +103,6 @@ REPOS = (
         todo='https://github.com/atom/language-xml/pull/99',
     ),
     Repo(
-        name='asottile/vscode-terraform',
-        version='ed3e9bd',
-        license_path='LICENSE',
-        grammars=('syntaxes/terraform.tmGrammar.json',),
-        todo='https://github.com/hashicorp/vscode-terraform/pull/459',
-    ),
-    Repo(
         name='asottile/yaml.tmbundle',
         version='b81b4184',
         license_path='README.mdown#License',
@@ -146,6 +139,12 @@ REPOS = (
         version='e36e02b',
         license_path='LICENSE.md',
         grammars=('Syntaxes/Makefile.plist',),
+    ),
+    Repo(
+        name='hashicorp/vscode-terraform',
+        version='6b393cf',
+        license_path='LICENSE',
+        grammars=('syntaxes/terraform.tmGrammar.json',),
     ),
     Repo(
         name='jeff-hykin/better-go-syntax',
