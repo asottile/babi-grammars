@@ -13,6 +13,7 @@ import urllib.parse
 import urllib.request
 from typing import Any
 from typing import Dict
+from typing import List
 from typing import NamedTuple
 from typing import Optional
 from typing import Set
@@ -286,7 +287,7 @@ def _ts_to_js(scope: str, dct: Dict[str, Any]) -> Dict[str, Any]:
     return ret
 
 
-def _download(*, only: Optional[str]) -> int:
+def _download(*, only: Optional[List[str]]) -> int:
     assert os.path.exists(_GRAMMAR_DIR)
     assert os.path.exists(_LICENSE_DIR)
 
@@ -294,7 +295,7 @@ def _download(*, only: Optional[str]) -> int:
     grammars: Set[str] = set()
 
     for repo in REPOS:
-        if only is not None and repo.name != only:
+        if only is not None and repo.name not in only:
             continue
         print(f'{repo.name}...')
 
@@ -342,7 +343,7 @@ def _download(*, only: Optional[str]) -> int:
                 f.write('\n')
 
     # similar to what vs code does, derive javascript from typescript
-    if only is None or only == 'microsoft/TypeScript-TmLanguage':
+    if only is None or 'microsoft/TypeScript-TmLanguage' in only:
         grammar_filename = os.path.join(_GRAMMAR_DIR, 'source.tsx.json')
         with open(grammar_filename, encoding='utf-8') as f:
             tsx = json.load(f)
@@ -386,10 +387,10 @@ def _download(*, only: Optional[str]) -> int:
     return 0
 
 
-def _update(*, only: Optional[str]) -> int:
+def _update(*, only: Optional[List[str]]) -> int:
     new = []
     for repo in REPOS:
-        if only is not None and repo.name != only:
+        if only is not None and repo.name not in only:
             new.append(repo)
             continue
 
@@ -461,7 +462,7 @@ def _update(*, only: Optional[str]) -> int:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument('command', choices=('download', 'update'))
-    parser.add_argument('--only')
+    parser.add_argument('--only', action='append')
     args = parser.parse_args()
 
     if args.command == 'download':
