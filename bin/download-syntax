@@ -316,7 +316,8 @@ def _download(*, only: Optional[str]) -> int:
         # some licenses have trailing whitespace, ugh
         license_s = TRAILING_WS_RE.sub('', license_s)
 
-        with open(os.path.join(_LICENSE_DIR, repo.license_filename), 'w') as f:
+        license_filename = os.path.join(_LICENSE_DIR, repo.license_filename)
+        with open(license_filename, 'w', encoding='utf-8') as f:
             f.write(f'LICENSE retrieved from {license_url}\n\n')
             f.write(f'{"-" * 79}\n\n')
             f.write(f'{license_s.rstrip()}\n')
@@ -335,19 +336,22 @@ def _download(*, only: Optional[str]) -> int:
 
             grammar_name = f'{loaded["scopeName"]}.json'
             grammars.add(grammar_name)
-            with open(os.path.join(_GRAMMAR_DIR, grammar_name), 'w') as f:
+            grammar_filename = os.path.join(_GRAMMAR_DIR, grammar_name)
+            with open(grammar_filename, 'w', encoding='utf-8') as f:
                 json.dump(loaded, f)
                 f.write('\n')
 
     # similar to what vs code does, derive javascript from typescript
     if only is None or only == 'microsoft/TypeScript-TmLanguage':
-        with open(os.path.join(_GRAMMAR_DIR, 'source.tsx.json')) as f:
+        grammar_filename = os.path.join(_GRAMMAR_DIR, 'source.tsx.json')
+        with open(grammar_filename, encoding='utf-8') as f:
             tsx = json.load(f)
 
         for scope in ('.js', '.js.jsx'):
             grammar_name = f'source{scope}.json'
             grammars.add(grammar_name)
-            with open(os.path.join(_GRAMMAR_DIR, grammar_name), 'w') as f:
+            grammar_filename = os.path.join(_GRAMMAR_DIR, grammar_name)
+            with open(grammar_filename, 'w', encoding='utf-8') as f:
                 json.dump(_ts_to_js(scope, tsx), f)
                 f.write('\n')
 
@@ -376,7 +380,7 @@ def _download(*, only: Optional[str]) -> int:
     new_contents = new_contents.replace('\t', '    ')
     new_contents = new_contents.replace(' \n', '\n')
 
-    with open('setup.cfg', 'w') as f:
+    with open('setup.cfg', 'w', encoding='utf-8') as f:
         f.write(new_contents)
 
     return 0
@@ -430,7 +434,7 @@ def _update(*, only: Optional[str]) -> int:
     new.sort(key=lambda repo: repo.name)
 
     if new != list(REPOS):
-        with open(__file__) as f:
+        with open(__file__, encoding='utf-8') as f:
             contents = f.read()
 
         before, begin, rest = contents.partition('# BEGIN\n')
@@ -447,7 +451,7 @@ def _update(*, only: Optional[str]) -> int:
         )
 
         print('updating source!')
-        with open(__file__, 'w') as f:
+        with open(__file__, 'w', encoding='utf-8') as f:
             for part in (before, begin, new_contents, end, rest):
                 f.write(part)
 
