@@ -14,7 +14,6 @@ TODO_TEST = frozenset((
     'source.css',
     'source.css.scss',
     'source.dockerfile',
-    'source.go',
     'source.ini',
     'source.js',
     'source.js.jsx',
