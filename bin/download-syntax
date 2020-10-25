@@ -179,6 +179,12 @@ REPOS = (
         grammars=('TypeScript.tmLanguage', 'TypeScriptReact.tmLanguage'),
     ),
     Repo(
+        name='microsoft/vscode',
+        version='8d2621e',
+        license_path='LICENSE.txt',
+        grammars=('extensions/java/syntaxes/java.tmLanguage.json',),
+    ),
+    Repo(
         name='microsoft/vscode-JSON.tmLanguage',
         version='d113e909',
         license_path='LICENSE',
