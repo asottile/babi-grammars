@@ -113,7 +113,7 @@ REPOS = (
     ),
     Repo(
         name='atom/language-css',
-        version='28f15d9',
+        version='7a9d4db',
         license_path='LICENSE.md',
         grammars=('grammars/css.cson',),
     ),
@@ -129,7 +129,7 @@ REPOS = (
     ),
     Repo(
         name='atom/language-shellscript',
-        version='7008ea92',
+        version='cad2413',
         license_path='LICENSE.md',
         grammars=(
             'grammars/shell-session.cson',
@@ -144,19 +144,19 @@ REPOS = (
     ),
     Repo(
         name='hashicorp/vscode-terraform',
-        version='6b393cf',
+        version='9d2956d',
         license_path='LICENSE',
         grammars=('syntaxes/terraform.tmGrammar.json',),
     ),
     Repo(
         name='jeff-hykin/better-go-syntax',
-        version='302b427',
+        version='6175663',
         license_path='LICENSE',
-        grammars=('source/generated.tmLanguage.json',),
+        grammars=('export/generated.tmLanguage.json',),
     ),
     Repo(
         name='jeff-hykin/cpp-textmate-grammar',
-        version='16c5ba3',
+        version='71aa94c',
         license_path='LICENSE',
         grammars=(
             'syntaxes/c.tmLanguage.json',
@@ -198,7 +198,7 @@ REPOS = (
     ),
     Repo(
         name='microsoft/vscode-mssql',
-        version='750d30d',
+        version='61ae0eb',
         license_path='LICENSE.txt',
         grammars=('syntaxes/SQL.plist',),
     ),
@@ -212,7 +212,7 @@ REPOS = (
     ),
     Repo(
         name='pragmagic/vscode-nim',
-        version='a945e66',
+        version='0272a05',
         license_path='LICENSE',
         grammars=('syntaxes/nim.json', 'syntaxes/nimble.json'),
     ),
