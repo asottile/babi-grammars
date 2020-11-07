@@ -1,4 +1,5 @@
 [![Build Status](https://dev.azure.com/asottile/asottile/_apis/build/status/asottile.babi-grammars?branchName=master)](https://dev.azure.com/asottile/asottile/_build/latest?definitionId=63&branchName=master)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/asottile/babi-grammars/master.svg)](https://results.pre-commit.ci/latest/github/asottile/babi-grammars/master)
 
 babi-grammars
 =============
