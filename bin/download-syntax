@@ -29,6 +29,14 @@ _STRATEGIES = (json.loads, cson.loads, plistlib.loads)
 _GRAMMAR_DIR = 'share/babi/grammar_v1'
 _LICENSE_DIR = 'licenses'
 
+# TODO: I'd like to find grammars for these, but for now, shrugs
+_DUMMY_ROOT_SCOPES = (
+    'source.x86_64',
+    'source.arm',
+    'source.asm',
+    'source.x86',
+)
+
 
 class Repo(NamedTuple):
     name: str
@@ -156,7 +164,7 @@ REPOS = (
     ),
     Repo(
         name='jeff-hykin/cpp-textmate-grammar',
-        version='71aa94c',
+        version='f074a48a',
         license_path='LICENSE',
         grammars=(
             'syntaxes/c.tmLanguage.json',
@@ -373,6 +381,14 @@ def _download(*, only: Optional[List[str]]) -> int:
             with open(grammar_filename, 'w', encoding='utf-8') as f:
                 json.dump(_ts_to_js(scope, tsx), f)
                 f.write('\n')
+
+    if only is None:
+        for root_scope in _DUMMY_ROOT_SCOPES:
+            grammar_name = f'{root_scope}.json'
+            with open(os.path.join(_GRAMMAR_DIR, grammar_name), 'w') as f:
+                json.dump({'scopeName': root_scope, 'patterns': []}, f)
+                f.write('\n')
+            grammars.add(grammar_name)
 
     if only is None:
         existing_licenses = set(os.listdir(_LICENSE_DIR))
