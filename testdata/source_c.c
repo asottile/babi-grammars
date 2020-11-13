@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+extern FILE *tmpfile (void) __asm__ ("" "tmpfile64") __attribute__ ((__warn_unused_result__));
+
 long compute(long* prog) {
     size_t pc = 0;
     while (true) {
