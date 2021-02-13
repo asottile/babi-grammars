@@ -211,6 +211,12 @@ REPOS = (
         grammars=('syntaxes/SQL.plist',),
     ),
     Repo(
+        name='mmims/language-batchfile',
+        version='95ea8c6',
+        license_path='LICENSE.md',
+        grammars=('grammars/batchfile.cson',),
+    ),
+    Repo(
         name='moby/moby',
         version='c7ad2b866',
         license_path='LICENSE',
