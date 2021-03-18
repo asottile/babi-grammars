@@ -237,6 +237,12 @@ REPOS = (
         grammars=('syntaxes/Scala.tmLanguage.json',),
     ),
     Repo(
+        name='stackb/bazel-stack-vscode',
+        version='c1923b4',
+        license_path='LICENSE.md',
+        grammars=('syntaxes/bazelrc.tmLanguage.json',),
+    ),
+    Repo(
         name='textmate/diff.tmbundle',
         version='0593bb77',
         license_path='README.mdown#License',
