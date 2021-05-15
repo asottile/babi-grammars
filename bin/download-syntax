@@ -30,7 +30,7 @@ _GRAMMAR_DIR = 'share/babi/grammar_v1'
 _LICENSE_DIR = 'licenses'
 
 # TODO: I'd like to find grammars for these, but for now, shrugs
-_DUMMY_ROOT_SCOPES = (
+_EMPTY_GRAMMAR_ROOT_SCOPES = (
     'source.x86_64',
     'source.arm',
     'source.asm',
@@ -401,7 +401,7 @@ def _download(*, only: Optional[List[str]]) -> int:
                 f.write('\n')
 
     if only is None:
-        for root_scope in _DUMMY_ROOT_SCOPES:
+        for root_scope in _EMPTY_GRAMMAR_ROOT_SCOPES:
             grammar_name = f'{root_scope}.json'
             with open(os.path.join(_GRAMMAR_DIR, grammar_name), 'w') as f:
                 json.dump({'scopeName': root_scope, 'patterns': []}, f)
