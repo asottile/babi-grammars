@@ -240,7 +240,11 @@ REPOS = (
         name='stackb/bazel-stack-vscode',
         version='c1923b4',
         license_path='LICENSE.md',
-        grammars=('syntaxes/bazelrc.tmLanguage.json',),
+        grammars=(
+            'syntaxes/bazelrc.tmLanguage.json',
+            'syntaxes/bazel.tmLanguage.json',
+            'syntaxes/starlark.tmLanguage.json',
+        ),
     ),
     Repo(
         name='textmate/diff.tmbundle',
