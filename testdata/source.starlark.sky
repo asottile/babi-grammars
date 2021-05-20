@@ -1,0 +1,4 @@
+load("foo/bar.sky", "bar")
+
+def thing(ctx):
+    return 1
