@@ -94,7 +94,7 @@ REPOS = (
     ),
     Repo(
         name='PowerShell/EditorSyntax',
-        version='4a0a0766',
+        version='c150c15',
         license_path='LICENSE',
         grammars=('PowerShellSyntax.tmLanguage',),
     ),
@@ -121,7 +121,7 @@ REPOS = (
     ),
     Repo(
         name='atom/language-css',
-        version='7a9d4db',
+        version='339e960',
         license_path='LICENSE.md',
         grammars=('grammars/css.cson',),
     ),
@@ -146,13 +146,13 @@ REPOS = (
     ),
     Repo(
         name='fadeevab/make.tmbundle',
-        version='e36e02b',
+        version='91b724d',
         license_path='LICENSE.md',
         grammars=('Syntaxes/Makefile.plist',),
     ),
     Repo(
         name='hashicorp/vscode-terraform',
-        version='9d2956d',
+        version='4f45801',
         license_path='LICENSE',
         grammars=('syntaxes/terraform.tmGrammar.json',),
     ),
@@ -182,13 +182,13 @@ REPOS = (
     ),
     Repo(
         name='microsoft/TypeScript-TmLanguage',
-        version='fa4e0d3',
+        version='634a12f',
         license_path='LICENSE.txt',
         grammars=('TypeScript.tmLanguage', 'TypeScriptReact.tmLanguage'),
     ),
     Repo(
         name='microsoft/vscode',
-        version='8d2621e',
+        version='b37252c1823',
         license_path='LICENSE.txt',
         grammars=('extensions/java/syntaxes/java.tmLanguage.json',),
     ),
@@ -200,7 +200,7 @@ REPOS = (
     ),
     Repo(
         name='microsoft/vscode-markdown-tm-grammar',
-        version='4be9cb3',
+        version='a612b96',
         license_path='LICENSE.txt',
         grammars=('syntaxes/markdown.tmLanguage',),
     ),
@@ -212,7 +212,7 @@ REPOS = (
     ),
     Repo(
         name='mmims/language-batchfile',
-        version='95ea8c6',
+        version='6154ae2',
         license_path='LICENSE.md',
         grammars=('grammars/batchfile.cson',),
     ),
@@ -274,7 +274,7 @@ REPOS = (
     ),
     Repo(
         name='textmate/ruby.tmbundle',
-        version='8d525dd',
+        version='efcb894',
         license_path='README.mdown#License',
         grammars=(
             'Syntaxes/Gemfile.tmLanguage',
