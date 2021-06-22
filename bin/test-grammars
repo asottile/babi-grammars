@@ -30,7 +30,6 @@ TODO_TEST = frozenset((
     'source.ruby.gemfile',
     'source.sass',
     'source.sassdoc',
-    'source.shell',
     'source.ts',
     'source.tsx',
     'source.x86',

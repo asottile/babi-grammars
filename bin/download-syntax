@@ -106,6 +106,15 @@ REPOS = (
         todo='https://github.com/zargony/atom-language-rust/pull/149',
     ),
     Repo(
+        name='asottile/language-shellscript',
+        version='821ef6f',
+        license_path='LICENSE.md',
+        grammars=(
+            'grammars/shell-session.cson',
+            'grammars/shell-unix-bash.cson',
+        ),
+    ),
+    Repo(
         name='asottile/language-xml',
         version='2d76bc1f',
         license_path='LICENSE.md',
@@ -133,15 +142,6 @@ REPOS = (
             'grammars/sass.cson',
             'grammars/sassdoc.cson',
             'grammars/scss.cson',
-        ),
-    ),
-    Repo(
-        name='atom/language-shellscript',
-        version='cad2413',
-        license_path='LICENSE.md',
-        grammars=(
-            'grammars/shell-session.cson',
-            'grammars/shell-unix-bash.cson',
         ),
     ),
     Repo(
@@ -241,8 +241,8 @@ REPOS = (
         version='c1923b4',
         license_path='LICENSE.md',
         grammars=(
-            'syntaxes/bazelrc.tmLanguage.json',
             'syntaxes/bazel.tmLanguage.json',
+            'syntaxes/bazelrc.tmLanguage.json',
             'syntaxes/starlark.tmLanguage.json',
         ),
     ),
