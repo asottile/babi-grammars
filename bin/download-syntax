@@ -84,6 +84,12 @@ class Repo(NamedTuple):
 # BEGIN
 REPOS = (
     Repo(
+        name='Dart-Code/Dart-Code',
+        version='2213a21d',
+        license_path='LICENSE',
+        grammars=('syntaxes/dart.json',),
+    ),
+    Repo(
         name='MagicStack/MagicPython',
         version='b2b4f4a',
         license_path='LICENSE',
