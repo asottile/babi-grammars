@@ -13,11 +13,9 @@ TODO_TEST = frozenset((
     # TODO: the embedded one shouldn't hit first
     'source.cpp',
     # TODO: I didn't have time to make demos for all of these
-    'source.css',
     'source.css.scss',
     'source.dockerfile',
     'source.ini',
-    'source.js',
     'source.js.jsx',
     'source.json',
     'source.nimble',

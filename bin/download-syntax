@@ -136,7 +136,7 @@ REPOS = (
     ),
     Repo(
         name='atom/language-css',
-        version='339e960',
+        version='033087e',
         license_path='LICENSE.md',
         grammars=('grammars/css.cson',),
     ),
@@ -170,7 +170,7 @@ REPOS = (
     ),
     Repo(
         name='jeff-hykin/cpp-textmate-grammar',
-        version='f074a48a',
+        version='c550969',
         license_path='LICENSE',
         grammars=(
             'syntaxes/c.tmLanguage.json',
@@ -188,7 +188,7 @@ REPOS = (
     ),
     Repo(
         name='microsoft/TypeScript-TmLanguage',
-        version='634a12f',
+        version='33d8371',
         license_path='LICENSE.txt',
         grammars=('TypeScript.tmLanguage', 'TypeScriptReact.tmLanguage'),
     ),
@@ -212,7 +212,7 @@ REPOS = (
     ),
     Repo(
         name='microsoft/vscode-mssql',
-        version='61ae0eb',
+        version='c98518d',
         license_path='LICENSE.txt',
         grammars=('syntaxes/SQL.plist',),
     ),
@@ -299,10 +299,10 @@ REPOS = (
         grammars=('Syntaxes/TOML.tmLanguage',),
     ),
     Repo(
-        name='vscode-restructuredtext/vscode-restructuredtext',
-        version='2cf5174',
+        name='trond-snekvik/vscode-rst',
+        version='77c1bdb',
         license_path='LICENSE.txt',
-        grammars=('syntaxes/restructuredtext.tmLanguage',),
+        grammars=('syntaxes/rst.tmLanguage.json',),
     ),
 )
 # END
@@ -317,7 +317,7 @@ def _ts_to_js(scope: str, dct: Dict[str, Any]) -> Dict[str, Any]:
         elif k == 'fileTypes':
             v = ['js', 'jsx', 'es6', 'mjs', 'cjs']
         elif k == 'scopeName':
-            v = f'scope{scope}'
+            v = f'source{scope}'
         elif isinstance(v, list):
             v = [_ts_to_js(scope, d) for d in v if isinstance(d, dict)]
         elif isinstance(v, dict):
