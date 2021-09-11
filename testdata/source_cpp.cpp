@@ -1,6 +1,10 @@
 #include <fstream>
 #include <iostream>
 
+/*
+multi line comment
+*/
+
 using std::cerr;
 using std::cout;
 using std::endl;
