@@ -37,6 +37,10 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
+    switch(argc) {
+        case 1:;
+    }
+
     int total = 0;
     int n;
     while (f >> n) {
