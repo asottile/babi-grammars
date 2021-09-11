@@ -410,6 +410,17 @@ def _download(*, only: Optional[List[str]]) -> int:
                 json.dump(_ts_to_js(scope, tsx), f)
                 f.write('\n')
 
+    # https://github.com/jeff-hykin/better-cpp-syntax/issues/566
+    if only is None or 'jeff-hykin/cpp-textmate-grammar' in only:
+        filename = os.path.join(_GRAMMAR_DIR, 'source.cpp.embedded.macro.json')
+        with open(filename, encoding='utf-8') as f:
+            grammar = json.load(f)
+
+        grammar['fileTypes'] = []  # force source.cpp to handle these types
+        with open(filename, 'w', encoding='utf-8') as f:
+            json.dump(grammar, f)
+            f.write('\n')
+
     if only is None:
         for root_scope in _EMPTY_GRAMMAR_ROOT_SCOPES:
             grammar_name = f'{root_scope}.json'

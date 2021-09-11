@@ -10,8 +10,7 @@ ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), '..'))
 TODO_TEST = frozenset((
     'source.arm',
     'source.asm',
-    # TODO: the embedded one shouldn't hit first
-    'source.cpp',
+    'source.cpp.embedded.macro',
     # TODO: I didn't have time to make demos for all of these
     'source.css.scss',
     'source.dockerfile',
