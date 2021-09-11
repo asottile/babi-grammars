@@ -112,6 +112,19 @@ REPOS = (
         todo='https://github.com/zargony/atom-language-rust/pull/149',
     ),
     Repo(
+        name='asottile/better-cpp-syntax',
+        version='646c201',
+        license_path='LICENSE',
+        grammars=(
+            'syntaxes/c.tmLanguage.json',
+            'syntaxes/cpp.embedded.macro.tmLanguage.json',
+            'syntaxes/cpp.tmLanguage.json',
+            'syntaxes/objc.tmLanguage.json',
+            'syntaxes/objcpp.tmLanguage.json',
+        ),
+        todo='https://github.com/jeff-hykin/better-cpp-syntax/issues/567',
+    ),
+    Repo(
         name='asottile/language-shellscript',
         version='821ef6f',
         license_path='LICENSE.md',
@@ -167,18 +180,6 @@ REPOS = (
         version='6175663',
         license_path='LICENSE',
         grammars=('export/generated.tmLanguage.json',),
-    ),
-    Repo(
-        name='jeff-hykin/cpp-textmate-grammar',
-        version='c550969',
-        license_path='LICENSE',
-        grammars=(
-            'syntaxes/c.tmLanguage.json',
-            'syntaxes/cpp.embedded.macro.tmLanguage.json',
-            'syntaxes/cpp.tmLanguage.json',
-            'syntaxes/objc.tmLanguage.json',
-            'syntaxes/objcpp.tmLanguage.json',
-        ),
     ),
     Repo(
         name='lingua-pupuli/puppet-editor-syntax',
@@ -411,7 +412,7 @@ def _download(*, only: Optional[List[str]]) -> int:
                 f.write('\n')
 
     # https://github.com/jeff-hykin/better-cpp-syntax/issues/566
-    if only is None or 'jeff-hykin/cpp-textmate-grammar' in only:
+    if only is None or any(s.endswith('/better-cpp-syntax') for s in only):
         filename = os.path.join(_GRAMMAR_DIR, 'source.cpp.embedded.macro.json')
         with open(filename, encoding='utf-8') as f:
             grammar = json.load(f)
