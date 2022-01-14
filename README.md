@@ -23,6 +23,7 @@ to add a grammar:
     - if you want the latest, use `version='HEAD'` and then run
       `./bin/download-syntax update --only repo/name` to freeze it
 - run `./bin/download-syntax download --only repo/name`
+- add a sample syntax file in `/testdata`
 
 to update all the grammars
 - run `./bin/download-syntax update`
