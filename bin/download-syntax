@@ -105,6 +105,12 @@ REPOS = (
         grammars=('PowerShellSyntax.tmLanguage',),
     ),
     Repo(
+        name='WhereIsX/vscode-crystal-lang',
+        version='582998d9645c65c46f033a8263d29fd0cb921d58',
+        license_path='LICENSE',
+        grammars=('syntaxes/crystal.json',),
+    ),
+    Repo(
         name='asottile/atom-language-rust',
         version='e113ca67',
         license_path='LICENSE.md',
