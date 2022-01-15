@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+from __future__ import annotations
+
 import argparse
 import concurrent.futures
 import configparser
@@ -13,12 +15,7 @@ import textwrap
 import urllib.parse
 import urllib.request
 from typing import Any
-from typing import Dict
-from typing import List
 from typing import NamedTuple
-from typing import Optional
-from typing import Set
-from typing import Tuple
 
 import cson  # pip install cson
 
@@ -42,8 +39,8 @@ class Repo(NamedTuple):
     name: str
     version: str
     license_path: str
-    grammars: Tuple[str, ...]
-    todo: Optional[str] = None
+    grammars: tuple[str, ...]
+    todo: str | None = None
 
     @property
     def license_filename(self) -> str:
@@ -335,7 +332,7 @@ REPOS = (
 # END
 
 
-def _ts_to_js(scope: str, dct: Dict[str, Any]) -> Dict[str, Any]:
+def _ts_to_js(scope: str, dct: dict[str, Any]) -> dict[str, Any]:
     ret = {}
 
     for k, v in dct.items():
@@ -357,7 +354,7 @@ def _ts_to_js(scope: str, dct: Dict[str, Any]) -> Dict[str, Any]:
     return ret
 
 
-def _download_repo(repo: Repo) -> Set[str]:
+def _download_repo(repo: Repo) -> set[str]:
     license_path, _, header = repo.license_path.partition('#')
     license_url = repo.url(license_path)
     license_s = urllib.request.urlopen(license_url).read().decode()
@@ -402,12 +399,12 @@ def _download_repo(repo: Repo) -> Set[str]:
     return downloaded_grammars
 
 
-def _download(*, only: Optional[List[str]]) -> int:
+def _download(*, only: list[str] | None) -> int:
     assert os.path.exists(_GRAMMAR_DIR)
     assert os.path.exists(_LICENSE_DIR)
 
-    licenses: Set[str] = set()
-    grammars: Set[str] = set()
+    licenses: set[str] = set()
+    grammars: set[str] = set()
 
     futures = {}
     with concurrent.futures.ThreadPoolExecutor() as executor:
@@ -476,7 +473,7 @@ def _download(*, only: Optional[List[str]]) -> int:
     return 0
 
 
-def _update(*, only: Optional[List[str]]) -> int:
+def _update(*, only: list[str] | None) -> int:
     new = []
     for repo in REPOS:
         if only is not None and repo.name not in only:
