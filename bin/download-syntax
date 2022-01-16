@@ -286,6 +286,12 @@ REPOS = (
         ),
     ),
     Repo(
+        name='textmate/haskell.tmbundle',
+        version='568ba21',
+        license_path='README.mdown#License',
+        grammars=('Syntaxes/Haskell.plist',),
+    ),
+    Repo(
         name='textmate/html.tmbundle',
         version='0c3d5ee5',
         license_path='README.mdown#License',
