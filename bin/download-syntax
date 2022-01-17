@@ -307,6 +307,12 @@ REPOS = (
         grammars=('Syntaxes/Ini.plist',),
     ),
     Repo(
+        name='textmate/lua.tmbundle',
+        version='8ae56413',
+        license_path='README.mdown#License',
+        grammars=('Syntaxes/Lua.plist',),
+    ),
+    Repo(
         name='textmate/perl.tmbundle',
         version='a85927a',
         license_path='README.mdown#License',
