@@ -1,0 +1,15 @@
+{
+    "some_string": "Hi!",
+    "an_number": 5031,
+    "boolean?": true,
+    "list": [
+        "Hi!",
+        "i'm",
+        "a",
+        "list"
+    ],
+    "object": {
+        "need_to_test": false,
+        "why": "already tested with the globakl object"
+    }
+}
