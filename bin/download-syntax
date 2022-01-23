@@ -319,6 +319,12 @@ REPOS = (
         grammars=('Syntaxes/Perl 6.tmLanguage', 'Syntaxes/Perl.plist'),
     ),
     Repo(
+        name='textmate/r.tmbundle',
+        version='292d9a2',
+        license_path='README.mdown#License',
+        grammars=('Syntaxes/R.plist',),
+    ),
+    Repo(
         name='textmate/ruby.tmbundle',
         version='efcb894',
         license_path='README.mdown#License',
