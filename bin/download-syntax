@@ -335,6 +335,12 @@ REPOS = (
         ),
     ),
     Repo(
+        name='textmate/swift.tmbundle',
+        version='8c7672d',
+        license_path='README.md#License',
+        grammars=('Syntaxes/Swift.tmLanguage',),
+    ),
+    Repo(
         name='textmate/toml.tmbundle',
         version='e82b64c',
         license_path='README.mdown#License',
