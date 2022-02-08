@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import concurrent.futures
 import configparser
+import functools
 import io
 import json
 import os.path
@@ -356,6 +357,9 @@ REPOS = (
 # END
 
 
+json_dump = functools.partial(json.dump, separators=(',', ':'))
+
+
 def _ts_to_js(scope: str, dct: dict[str, Any]) -> dict[str, Any]:
     ret = {}
 
@@ -418,7 +422,7 @@ def _download_repo(repo: Repo) -> set[str]:
         downloaded_grammars.add(grammar_name)
         grammar_filename = os.path.join(_GRAMMAR_DIR, grammar_name)
         with open(grammar_filename, 'w', encoding='UTF-8') as f:
-            json.dump(loaded, f)
+            json_dump(loaded, f)
             f.write('\n')
     return downloaded_grammars
 
@@ -455,14 +459,14 @@ def _download(*, only: list[str] | None) -> int:
             grammars.add(grammar_name)
             grammar_filename = os.path.join(_GRAMMAR_DIR, grammar_name)
             with open(grammar_filename, 'w', encoding='utf-8') as f:
-                json.dump(_ts_to_js(scope, tsx), f)
+                json_dump(_ts_to_js(scope, tsx), f)
                 f.write('\n')
 
     if only is None:
         for root_scope in _EMPTY_GRAMMAR_ROOT_SCOPES:
             grammar_name = f'{root_scope}.json'
             with open(os.path.join(_GRAMMAR_DIR, grammar_name), 'w') as f:
-                json.dump({'scopeName': root_scope, 'patterns': []}, f)
+                json_dump({'scopeName': root_scope, 'patterns': []}, f)
                 f.write('\n')
             grammars.add(grammar_name)
 
