@@ -104,7 +104,7 @@ REPOS = (
     ),
     Repo(
         name='WhereIsX/vscode-crystal-lang',
-        version='582998d9645c65c46f033a8263d29fd0cb921d58',
+        version='1a645b32ce7c14e1edf7cf2a533d774a7754dbed',
         license_path='LICENSE',
         grammars=('syntaxes/crystal.json',),
     ),
