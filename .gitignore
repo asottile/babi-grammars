@@ -1,7 +1,5 @@
 *.egg-info
 *.pyc
 /.coverage
-/.mypy_cache
 /.tox
 /dist
-/venv*
