@@ -308,6 +308,12 @@ REPOS = (
         grammars=('Syntaxes/Ini.plist',),
     ),
     Repo(
+        name='textmate/latex.tmbundle',
+        version='f22af13',
+        license_path='README.mdown#License',
+        grammars=('Syntaxes/LaTeX.plist', 'Syntaxes/TeX.plist'),
+    ),
+    Repo(
         name='textmate/lua.tmbundle',
         version='8ae56413',
         license_path='README.mdown#License',
