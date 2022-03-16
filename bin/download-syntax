@@ -151,6 +151,12 @@ REPOS = (
         grammars=('grammars/css.cson',),
     ),
     Repo(
+        name='atom/language-php',
+        version='ff64523',
+        license_path='LICENSE.md',
+        grammars=('grammars/php.cson',),
+    ),
+    Repo(
         name='atom/language-sass',
         version='f52ab12',
         license_path='LICENSE.md',
