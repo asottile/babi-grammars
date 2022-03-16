@@ -173,6 +173,12 @@ REPOS = (
         grammars=('syntaxes/terraform.tmGrammar.json',),
     ),
     Repo(
+        name='ionide/ionide-fsgrammar',
+        version='c6e0475',
+        license_path='LICENSE.md',
+        grammars=('grammars/fsharp.json',),
+    ),
+    Repo(
         name='jeff-hykin/better-c-syntax',
         version='34712a6',
         license_path='LICENSE',
