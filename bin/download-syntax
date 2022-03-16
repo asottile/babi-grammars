@@ -173,6 +173,12 @@ REPOS = (
         grammars=('grammars/csharp.tmLanguage',),
     ),
     Repo(
+        name='fixterjake/vscode-kotlin',
+        version='5178a92',
+        license_path='LICENSE',
+        grammars=('syntaxes/Kotlin.tmLanguage',),
+    ),
+    Repo(
         name='hashicorp/vscode-terraform',
         version='4f45801',
         license_path='LICENSE',
