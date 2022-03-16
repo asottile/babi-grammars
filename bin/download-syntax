@@ -173,6 +173,12 @@ REPOS = (
         grammars=('grammars/csharp.tmLanguage',),
     ),
     Repo(
+        name='elixir-editors/elixir-tmbundle',
+        version='43c8cd9',
+        license_path='LICENSE',
+        grammars=('Syntaxes/Elixir.tmLanguage',),
+    ),
+    Repo(
         name='hashicorp/vscode-terraform',
         version='4f45801',
         license_path='LICENSE',
