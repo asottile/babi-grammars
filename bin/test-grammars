@@ -17,8 +17,6 @@ TODO_TEST = frozenset((
     'source.ini',
     'source.js.jsx',
     'source.nimble',
-    'source.objc',
-    'source.objcpp',
     'source.powershell',
     'source.regexp.python',
     'source.ruby.gemfile',
