@@ -274,6 +274,12 @@ REPOS = (
         ),
     ),
     Repo(
+        name='nishtahir/language-kotlin',
+        version='0fa40c0',
+        license_path='LICENSE',
+        grammars=('dist/Kotlin.tmLanguage',),
+    ),
+    Repo(
         name='pragmagic/vscode-nim',
         version='0272a05',
         license_path='LICENSE',
