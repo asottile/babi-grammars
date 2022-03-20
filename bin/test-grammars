@@ -14,23 +14,16 @@ TODO_TEST = frozenset((
     'source.asm',
     'source.cpp.embedded.macro',
     # TODO: I didn't have time to make demos for all of these
-    'source.ini',
     'source.js.jsx',
     'source.nimble',
-    'source.powershell',
     'source.regexp.python',
     'source.ruby.gemfile',
     'source.sassdoc',
-    'source.tsx',
     'source.x86',
     'source.x86_64',
     'text.git-commit',
-    'text.git-rebase',
-    'text.html.basic',
     'text.html.derivative',
-    'text.html.erb',
     'text.shell-session',
-    'text.xml.xsl',
 ))
 
 
