@@ -1,5 +1,5 @@
-[![Build Status](https://dev.azure.com/asottile/asottile/_apis/build/status/asottile.babi-grammars?branchName=master)](https://dev.azure.com/asottile/asottile/_build/latest?definitionId=63&branchName=master)
-[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/asottile/babi-grammars/master.svg)](https://results.pre-commit.ci/latest/github/asottile/babi-grammars/master)
+[![Build Status](https://dev.azure.com/asottile/asottile/_apis/build/status/asottile.babi-grammars?branchName=main)](https://dev.azure.com/asottile/asottile/_build/latest?definitionId=63&branchName=main)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/asottile/babi-grammars/main.svg)](https://results.pre-commit.ci/latest/github/asottile/babi-grammars/main)
 
 babi-grammars
 =============
