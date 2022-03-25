@@ -16,4 +16,3 @@ Installation
 ------------
 
 To install |Flake8|, open an interactive shell and run:
-

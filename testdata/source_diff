@@ -15,7 +15,7 @@ index 3692765..07ab3bb 100644
          self._y = len(lst) - 1
 -        self._x = 0
 +        self._x = len(self._s)
- 
+
      @property
      def _s(self) -> str:
 diff --git a/tests/save_test.py b/tests/save_test.py
@@ -32,8 +32,8 @@ index 7ef8741..0c79e37 100644
          h.await_text('saved! (1 line written)')
      assert f.read() == 'hello world\n'
 @@ -125,7 +125,7 @@ def test_save_via_ctrl_o_set_filename(run, tmpdir):
- 
- 
+
+
  @pytest.mark.parametrize('key', ('^C', 'Enter'))
 -def test_save_via_ctrl_o_cancelled(run, tmpdir, key):
 +def test_save_via_ctrl_o_cancelled(run, key):
@@ -42,8 +42,8 @@ index 7ef8741..0c79e37 100644
          h.press('^O')
 @@ -134,6 +134,15 @@ def test_save_via_ctrl_o_cancelled(run, tmpdir, key):
          h.await_text('cancelled')
- 
- 
+
+
 +def test_save_via_ctrl_o_position(run):
 +    with run('filename') as h, and_exit(h):
 +        h.press('hello world')
