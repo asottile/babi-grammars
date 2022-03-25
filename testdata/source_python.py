@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 def truth_machine(n: int) -> None:
     while n == 1:
         print(1)

@@ -25,4 +25,3 @@
         }.bind(null, block));
     }
 })();
-
