@@ -3,6 +3,7 @@ repos:
     rev: v4.1.0
     hooks:
     -   id: trailing-whitespace
+        exclude: ^testdata/source_diff$
     -   id: end-of-file-fixer
     -   id: check-yaml
     -   id: debug-statements
