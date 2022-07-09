@@ -132,12 +132,6 @@ REPOS = (
         todo='https://github.com/atom/language-xml/pull/99',
     ),
     Repo(
-        name='asottile/make.tmbundle',
-        version='b23245d',
-        license_path='LICENSE.md',
-        grammars=('Syntaxes/Makefile.plist',),
-    ),
-    Repo(
         name='asottile/yaml.tmbundle',
         version='b81b4184',
         license_path='README.mdown#License',
@@ -177,6 +171,12 @@ REPOS = (
         version='43c8cd9',
         license_path='LICENSE',
         grammars=('Syntaxes/Elixir.tmLanguage',),
+    ),
+    Repo(
+        name='fadeevab/make.tmbundle',
+        version='ef0c485',
+        license_path='LICENSE.md',
+        grammars=('Syntaxes/Makefile.plist',),
     ),
     Repo(
         name='hashicorp/vscode-terraform',
