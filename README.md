@@ -8,7 +8,9 @@ grammars for babi
 
 ## installation
 
-`pip install babi-grammars`
+```bash
+pip install babi-grammars
+```
 
 ### licenses
 
