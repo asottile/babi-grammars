@@ -132,6 +132,13 @@ REPOS = (
         todo='https://github.com/atom/language-xml/pull/99',
     ),
     Repo(
+        name='asottile/pest-Syntax-Highlighting-for-vscode',
+        version='3d5cd6f',
+        license_path='LICENSE',
+        grammars=('syntaxes/pestfile.tmLanguage.json',),
+        todo='https://github.com/Xoronic/pest-Syntax-Highlighting-for-vscode/pull/8',  # noqa: E501
+    ),
+    Repo(
         name='asottile/yaml.tmbundle',
         version='b81b4184',
         license_path='README.mdown#License',

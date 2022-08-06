@@ -1,0 +1,13 @@
+alnum = _{ ASCII_ALPHA | ASCII_DIGIT }
+ws = _{ " " | "\t" }
+
+ident_end = _{ alnum | (("-" | "_" | "." )* ~ alnum)}
+ident = _{ alnum ~ ident_end* }
+
+name = { ident }
+
+extras = { "[" ~ ws* ~ ident ~ ( ws* ~ "," ~ ws* ~ ident)* ~ ws* ~ "]" }
+
+req = { name ~ ws* ~ extras? ~ ws* ~ "==" }
+comment = _{ "#" ~ (!NEWLINE ~ ANY)* }
+lines = _{ SOI ~ ((req | comment)? ~ NEWLINE)* ~ EOI }
