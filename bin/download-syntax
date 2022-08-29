@@ -109,6 +109,12 @@ REPOS = (
         grammars=('syntaxes/crystal.json',),
     ),
     Repo(
+        name='Xoronic/pest-Syntax-Highlighting-for-vscode',
+        version='82990dc',
+        license_path='LICENSE',
+        grammars=('syntaxes/pestfile.tmLanguage.json',),
+    ),
+    Repo(
         name='asottile/atom-language-rust',
         version='e113ca67',
         license_path='LICENSE.md',
@@ -130,13 +136,6 @@ REPOS = (
         license_path='LICENSE.md',
         grammars=('grammars/xml.cson', 'grammars/xsl.cson'),
         todo='https://github.com/atom/language-xml/pull/99',
-    ),
-    Repo(
-        name='asottile/pest-Syntax-Highlighting-for-vscode',
-        version='3d5cd6f',
-        license_path='LICENSE',
-        grammars=('syntaxes/pestfile.tmLanguage.json',),
-        todo='https://github.com/Xoronic/pest-Syntax-Highlighting-for-vscode/pull/8',  # noqa: E501
     ),
     Repo(
         name='asottile/yaml.tmbundle',
