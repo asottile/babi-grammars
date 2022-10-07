@@ -115,6 +115,12 @@ REPOS = (
         grammars=('syntaxes/pestfile.tmLanguage.json',),
     ),
     Repo(
+        name='alefragnani/vscode-language-pascal',
+        version='140ff95',
+        license_path='LICENSE.md',
+        grammars=('syntaxes/pascal.tmLanguage',),
+    ),
+    Repo(
         name='asottile/atom-language-rust',
         version='e113ca67',
         license_path='LICENSE.md',
