@@ -398,6 +398,12 @@ REPOS = (
         license_path='LICENSE.txt',
         grammars=('syntaxes/rst.tmLanguage.json',),
     ),
+    Repo(
+        name='ziglang/vscode-zig',
+        version='f371d5d',
+        license_path='LICENSE',
+        grammars=('syntaxes/zig.tmLanguage.json',),
+    ),
 )
 # END
 
