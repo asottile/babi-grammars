@@ -103,6 +103,12 @@ REPOS = (
         grammars=('PowerShellSyntax.tmLanguage',),
     ),
     Repo(
+        name='TingPing/language-meson',
+        version='9026953',
+        license_path='LICENSE.md',
+        grammars=('grammars/meson.cson',),
+    ),
+    Repo(
         name='WhereIsX/vscode-crystal-lang',
         version='1a645b32ce7c14e1edf7cf2a533d774a7754dbed',
         license_path='LICENSE',
