@@ -109,12 +109,6 @@ REPOS = (
         grammars=('grammars/meson.cson',),
     ),
     Repo(
-        name='WhereIsX/vscode-crystal-lang',
-        version='1a645b32ce7c14e1edf7cf2a533d774a7754dbed',
-        license_path='LICENSE',
-        grammars=('syntaxes/crystal.json',),
-    ),
-    Repo(
         name='Xoronic/pest-Syntax-Highlighting-for-vscode',
         version='82990dc',
         license_path='LICENSE',
@@ -177,6 +171,12 @@ REPOS = (
             'grammars/sassdoc.cson',
             'grammars/scss.cson',
         ),
+    ),
+    Repo(
+        name='crystal-lang-tools/vscode-crystal-lang',
+        version='45d0b42',
+        license_path='LICENSE',
+        grammars=('syntaxes/crystal.json',),
     ),
     Repo(
         name='dotnet/csharp-tmLanguage',
@@ -542,6 +542,7 @@ def _download(*, only: list[str] | None) -> int:
     cfg.read('setup.cfg')
 
     license_files = sorted(os.path.join(_LICENSE_DIR, f) for f in licenses)
+    license_files.insert(0, 'LICENSE')
     cfg['metadata']['license_files'] = '\n' + '\n'.join(license_files)
     grammar_files = sorted(os.path.join(_GRAMMAR_DIR, f) for f in grammars)
     cfg['options.data_files'][_GRAMMAR_DIR] = '\n' + '\n'.join(grammar_files)
