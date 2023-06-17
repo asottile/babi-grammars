@@ -83,7 +83,7 @@ class Repo(NamedTuple):
 REPOS = (
     Repo(
         name='Dart-Code/Dart-Code',
-        version='9f2d5c61',
+        version='c2f0a3d4',
         license_path='LICENSE',
         grammars=('syntaxes/dart.json',),
     ),
@@ -110,7 +110,7 @@ REPOS = (
     ),
     Repo(
         name='Xoronic/pest-Syntax-Highlighting-for-vscode',
-        version='82990dc',
+        version='3c24b30',
         license_path='LICENSE',
         grammars=('syntaxes/pestfile.tmLanguage.json',),
     ),
@@ -180,7 +180,7 @@ REPOS = (
     ),
     Repo(
         name='dotnet/csharp-tmLanguage',
-        version='5e7dd90',
+        version='f65cc19',
         license_path='LICENSE',
         grammars=('grammars/csharp.tmLanguage',),
     ),
@@ -192,7 +192,7 @@ REPOS = (
     ),
     Repo(
         name='fadeevab/make.tmbundle',
-        version='ef0c485',
+        version='1d4c0b5',
         license_path='LICENSE.md',
         grammars=('Syntaxes/Makefile.plist',),
     ),
@@ -207,7 +207,7 @@ REPOS = (
     ),
     Repo(
         name='ionide/ionide-fsgrammar',
-        version='713cd4a',
+        version='71b1ead',
         license_path='LICENSE.md',
         grammars=('grammars/fsharp.json',),
     ),
@@ -252,7 +252,7 @@ REPOS = (
     ),
     Repo(
         name='microsoft/TypeScript-TmLanguage',
-        version='359e091',
+        version='e0aefd8',
         license_path='LICENSE.txt',
         grammars=('TypeScript.tmLanguage', 'TypeScriptReact.tmLanguage'),
     ),
@@ -270,13 +270,13 @@ REPOS = (
     ),
     Repo(
         name='microsoft/vscode-markdown-tm-grammar',
-        version='97f2f8d',
+        version='e2af2e5',
         license_path='LICENSE.txt',
         grammars=('syntaxes/markdown.tmLanguage',),
     ),
     Repo(
         name='microsoft/vscode-mssql',
-        version='998c713',
+        version='cb59402',
         license_path='LICENSE.txt',
         grammars=('syntaxes/SQL.plist',),
     ),
@@ -296,7 +296,7 @@ REPOS = (
     ),
     Repo(
         name='nishtahir/language-kotlin',
-        version='f47a0c4',
+        version='bad0234',
         license_path='LICENSE',
         grammars=('dist/Kotlin.tmLanguage',),
     ),
@@ -308,7 +308,7 @@ REPOS = (
     ),
     Repo(
         name='scala/vscode-scala-syntax',
-        version='551c71c',
+        version='cd24dc8',
         license_path='LICENSE.md',
         grammars=('syntaxes/Scala.tmLanguage.json',),
     ),
@@ -400,13 +400,13 @@ REPOS = (
     ),
     Repo(
         name='trond-snekvik/vscode-rst',
-        version='f0fe19f',
+        version='4f6f1a8',
         license_path='LICENSE.txt',
         grammars=('syntaxes/rst.tmLanguage.json',),
     ),
     Repo(
         name='ziglang/vscode-zig',
-        version='f371d5d',
+        version='9a09fe6',
         license_path='LICENSE',
         grammars=('syntaxes/zig.tmLanguage.json',),
     ),
