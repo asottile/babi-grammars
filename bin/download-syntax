@@ -260,7 +260,10 @@ REPOS = (
         name='microsoft/vscode',
         version='b37252c1823',
         license_path='LICENSE.txt',
-        grammars=('extensions/java/syntaxes/java.tmLanguage.json',),
+        grammars=(
+            'extensions/java/syntaxes/java.tmLanguage.json',
+            'extensions/coffeescript/syntaxes/coffeescript.tmLanguage.json',
+        ),
     ),
     Repo(
         name='microsoft/vscode-JSON.tmLanguage',
