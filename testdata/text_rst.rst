@@ -16,3 +16,8 @@ Installation
 ------------
 
 To install |Flake8|, open an interactive shell and run:
+
+.. this used to break vscode-rst
+
+The decimal module now requires libmpdec-2.5.0. Users of
+--with-system-libmpdec should update their system library.
