@@ -180,7 +180,7 @@ REPOS = (
     ),
     Repo(
         name='dotnet/csharp-tmLanguage',
-        version='f65cc19',
+        version='7bf5709',
         license_path='LICENSE',
         grammars=('grammars/csharp.tmLanguage',),
     ),
