@@ -5,6 +5,8 @@
 multi line comment
 */
 
+#pragma once
+
 using std::cerr;
 using std::cout;
 using std::endl;
