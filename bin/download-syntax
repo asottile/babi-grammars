@@ -197,6 +197,12 @@ REPOS = (
         grammars=('Syntaxes/Makefile.plist',),
     ),
     Repo(
+        name='gleam-lang/vscode-gleam',
+        version='752bbdf',
+        license_path='LICENSE.txt',
+        grammars=('syntaxes/gleam.tmLanguage.json',),
+    ),
+    Repo(
         name='hashicorp/syntax',
         version='13b5b4f',
         license_path='LICENSE',
