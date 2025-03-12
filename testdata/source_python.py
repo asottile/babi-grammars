@@ -1,5 +1,16 @@
 from __future__ import annotations
 
+type R[U] = list[U | R[U]]
+
+
+class MyContainer[T]:
+    def __init__(self, o: list[T]) -> None:
+        self.o = o
+
+
+def func[T: int](u: list[T]) -> list[T]:
+    return u
+
 
 def truth_machine(n: int) -> None:
     while n == 1:
