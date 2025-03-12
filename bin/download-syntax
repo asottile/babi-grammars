@@ -88,15 +88,6 @@ REPOS = (
         grammars=('syntaxes/dart.json',),
     ),
     Repo(
-        name='MagicStack/MagicPython',
-        version='7d0f2b2',
-        license_path='LICENSE',
-        grammars=(
-            'grammars/MagicPython.tmLanguage',
-            'grammars/MagicRegExp.tmLanguage',
-        ),
-    ),
-    Repo(
         name='PowerShell/EditorSyntax',
         version='742f0b5',
         license_path='LICENSE',
@@ -119,6 +110,16 @@ REPOS = (
         version='d5a15b7',
         license_path='LICENSE.md',
         grammars=('syntaxes/pascal.tmLanguage',),
+    ),
+    Repo(
+        name='asottile/MagicPython',
+        version='2b521f0',
+        license_path='LICENSE',
+        grammars=(
+            'grammars/MagicPython.tmLanguage',
+            'grammars/MagicRegExp.tmLanguage',
+        ),
+        todo='https://github.com/MagicStack/MagicPython/pull/270',
     ),
     Repo(
         name='asottile/atom-language-rust',
