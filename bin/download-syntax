@@ -204,6 +204,12 @@ REPOS = (
         grammars=('language/jsonnet.tmLanguage.json',),
     ),
     Repo(
+        name='gleam-lang/vscode-gleam',
+        version='79dce69',
+        license_path='LICENSE.txt',
+        grammars=('syntaxes/gleam.tmLanguage.json',),
+    ),
+    Repo(
         name='hashicorp/syntax',
         version='13b5b4f',
         license_path='LICENSE',
