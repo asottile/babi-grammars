@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+something = 'world'
+a_t_string = t'hello {something}'
+
 type R[U] = list[U | R[U]]
 
 
