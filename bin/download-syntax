@@ -225,6 +225,12 @@ REPOS = (
         grammars=('grammars/fsharp.json',),
     ),
     Repo(
+        name='jaseci-labs/jaseci',
+        version='23d1411ff',
+        license_path='.github/LICENSE',
+        grammars=('jac/support/vscode_ext/jac/syntaxes/jac.tmLanguage.json',),
+    ),
+    Repo(
         name='jeff-hykin/better-c-syntax',
         version='34712a6',
         license_path='LICENSE',
