@@ -21,7 +21,7 @@ from typing import NamedTuple
 import cson  # pip install cson
 
 HEADER_RE = re.compile('^#+ ', re.MULTILINE)
-TRAILING_WS_RE = re.compile(r'\s+$', re.MULTILINE)
+TRAILING_WS_RE = re.compile(r'[ \r]+(?=\n)')
 
 _STRATEGIES = (json.loads, cson.loads, plistlib.loads)
 _GRAMMAR_DIR = 'share/babi/grammar_v1'
