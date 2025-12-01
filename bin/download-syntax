@@ -225,6 +225,12 @@ REPOS = (
         grammars=('grammars/fsharp.json',),
     ),
     Repo(
+        name='janet-lang/vscode-janet',
+        version='6fb796c',
+        license_path='LICENSE',
+        grammars=('syntaxes/janet.tmLanguage',),
+    ),
+    Repo(
         name='jaseci-labs/jaseci',
         version='23d1411ff',
         license_path='.github/LICENSE',
