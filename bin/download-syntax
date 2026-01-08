@@ -431,6 +431,12 @@ REPOS = (
         license_path='LICENSE',
         grammars=('syntaxes/zig.tmLanguage.json',),
     ),
+    Repo(
+        name='zxh0/vscode-proto3',
+        version='274be76',
+        license_path='LICENSE.txt',
+        grammars=('syntaxes/proto3.tmLanguage.json',),
+    ),
 )
 # END
 
