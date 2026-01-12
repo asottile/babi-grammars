@@ -231,10 +231,10 @@ REPOS = (
         grammars=('syntaxes/janet.tmLanguage',),
     ),
     Repo(
-        name='jaseci-labs/jaseci',
-        version='23d1411ff',
-        license_path='.github/LICENSE',
-        grammars=('jac/support/vscode_ext/jac/syntaxes/jac.tmLanguage.json',),
+        name='jaseci-labs/jac-vscode',
+        version='bd10e06',
+        license_path='LICENSE',
+        grammars=('syntaxes/jac.tmLanguage.json',),
     ),
     Repo(
         name='jeff-hykin/better-c-syntax',
@@ -599,6 +599,36 @@ def _default_branch(repo: str) -> str:
     return line[len(start):-1 * len(end)]
 
 
+def _determine_branch(repo: Repo, tmpdir: str) -> str:
+    git = ('git', '-C', tmpdir)
+    fetch = (*git, 'fetch', '--quiet', '--filter=blob:none')
+
+    default_branch = _default_branch(tmpdir)
+    _call(*fetch, 'origin', default_branch)
+    if repo.version == 'HEAD':
+        return f'origin/{default_branch}'
+
+    exists = (*git, 'cat-file', '-e', f'{repo.version}^{{commit}}')
+    if subprocess.call(exists, stderr=subprocess.DEVNULL):
+        _call(*fetch)
+        if subprocess.call(exists, stderr=subprocess.DEVNULL):
+            raise SystemExit('commit not found?')
+
+    branches_cmd = (*git, 'branch', '-r', '--contains', repo.version)
+    branches_s = subprocess.check_output(branches_cmd).decode()
+    branches = [s.strip() for s in branches_s.splitlines()]
+
+    if not branches:
+        raise SystemExit(f'orphaned commit {repo.name}')
+
+    for candidate in branches:
+        if candidate.startswith('origin/HEAD -> '):
+            _, _, branch = candidate.rpartition(' ')
+            return branch
+    else:
+        return branches[0]
+
+
 def _update(*, only: list[str] | None) -> int:
     new = []
     for repo in REPOS:
@@ -617,32 +647,11 @@ def _update(*, only: list[str] | None) -> int:
             url = f'https://github.com/{repo.name}'
             _call(*git, 'remote', 'add', 'origin', url)
 
-            default_branch = _default_branch(tmpdir)
-            for target in (('origin', default_branch), ()):
-                _call(*git, 'fetch', '--quiet', '--filter=blob:none', *target)
-
-                exists = (*git, 'cat-file', '-e', f'{repo.version}^{{commit}}')
-                if not subprocess.call(exists, stderr=subprocess.DEVNULL):
-                    break
-            else:
-                raise SystemExit('commit not found?')
-
-            branches_cmd = (*git, 'branch', '-r', '--contains', repo.version)
-            branches_s = subprocess.check_output(branches_cmd).decode()
-            branches = [s.strip() for s in branches_s.splitlines()]
-
-            if not branches:
-                raise SystemExit(f'orphaned commit {repo.name}')
-
-            for candidate in branches:
-                if candidate.startswith('origin/HEAD -> '):
-                    _, _, branch = candidate.rpartition(' ')
-                    break
-            else:
-                branch = branches[0]
+            branch = _determine_branch(repo, tmpdir)
 
             version_cmd = (
-                *git, 'log', '-1', '--format=%h', branch, '--', *repo.grammars,
+                *git, 'log', '-1', '--format=%h', branch, '--',
+                repo.license_path, *repo.grammars,
             )
             version = subprocess.check_output(version_cmd).decode().strip()
 
