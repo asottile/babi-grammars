@@ -181,7 +181,7 @@ REPOS = (
     ),
     Repo(
         name='dotnet/csharp-tmLanguage',
-        version='965478e',
+        version='2e6860d',
         license_path='LICENSE',
         grammars=('grammars/csharp.tmLanguage',),
     ),
@@ -305,9 +305,9 @@ REPOS = (
     ),
     Repo(
         name='microsoft/vscode-mssql',
-        version='ff0c7d3b',
+        version='5fd71951',
         license_path='LICENSE.txt',
-        grammars=('syntaxes/SQL.plist',),
+        grammars=('extensions/mssql/syntaxes/SQL.plist',),
     ),
     Repo(
         name='mmims/language-batchfile',
