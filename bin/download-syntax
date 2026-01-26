@@ -113,7 +113,7 @@ REPOS = (
     ),
     Repo(
         name='asottile/MagicPython',
-        version='fe97df4',
+        version='4e9c941',
         license_path='LICENSE',
         grammars=(
             'grammars/MagicPython.tmLanguage',

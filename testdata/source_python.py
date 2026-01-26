@@ -2,6 +2,8 @@ from __future__ import annotations
 
 something = 'world'
 a_t_string = t'hello {something}'
+width = 15
+another_t_string = t'hello {something:>{width}}'
 
 type R[U] = list[U | R[U]]
 
