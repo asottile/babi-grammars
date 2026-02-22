@@ -232,7 +232,7 @@ REPOS = (
     ),
     Repo(
         name='jaseci-labs/jac-vscode',
-        version='bd10e06',
+        version='eaa6672',
         license_path='LICENSE',
         grammars=('syntaxes/jac.tmLanguage.json',),
     ),
