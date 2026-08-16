@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+lazy from typing import LiteralString
+lazy import asyncio
+
 something = 'world'
 a_t_string = t'hello {something}'
 width = 15
